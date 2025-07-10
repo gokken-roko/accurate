@@ -1,0 +1,49 @@
+apiVersion: accurate.cybozu.com/v2
+kind: ClusterResourceQuota
+metadata:
+  name: frontend-root
+spec:
+  quota:
+    hard:
+      pods: "2"
+      limits.memory: "10Gi"
+      requests.storage: "100Gi"
+  namespaceSelector:
+    matchLabels:
+      team: frontend
+---
+apiVersion: accurate.cybozu.com/v2
+kind: ClusterResourceQuota
+metadata:
+  name: frontend-sub-1
+spec:
+  quota:
+    hard:
+      pods: "1"
+  namespaceSelector:
+    matchLabels:
+      kubernetes.io/metadata.name: frontend-sub-1
+---
+apiVersion: accurate.cybozu.com/v2
+kind: ClusterResourceQuota
+metadata:
+  name: frontend-sub-2
+spec:
+  quota:
+    hard:
+      pods: "1"
+  namespaceSelector:
+    matchLabels:
+      kubernetes.io/metadata.name: frontend-sub-2
+---
+apiVersion: accurate.cybozu.com/v2
+kind: ClusterResourceQuota
+metadata:
+  name: frontend-sub-3
+spec:
+  quota:
+    hard:
+      pods: "1"
+  namespaceSelector:
+    matchLabels:
+      kubernetes.io/metadata.name: frontend-sub-3

@@ -15,6 +15,14 @@ import (
 func ForKind(kind schema.GroupVersionKind) interface{} {
 	switch kind {
 	// Group=accurate.cybozu.com, Version=v2
+	case v2.SchemeGroupVersion.WithKind("ClusterResourceQuota"):
+		return &accuratev2.ClusterResourceQuotaApplyConfiguration{}
+	case v2.SchemeGroupVersion.WithKind("ClusterResourceQuotaSpec"):
+		return &accuratev2.ClusterResourceQuotaSpecApplyConfiguration{}
+	case v2.SchemeGroupVersion.WithKind("ClusterResourceQuotaStatus"):
+		return &accuratev2.ClusterResourceQuotaStatusApplyConfiguration{}
+	case v2.SchemeGroupVersion.WithKind("Quota"):
+		return &accuratev2.QuotaApplyConfiguration{}
 	case v2.SchemeGroupVersion.WithKind("SubNamespace"):
 		return &accuratev2.SubNamespaceApplyConfiguration{}
 	case v2.SchemeGroupVersion.WithKind("SubNamespaceSpec"):

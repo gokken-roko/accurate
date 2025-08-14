@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: frontend-root
+  labels:
+    accurate.cybozu.com/type: root
+    team: frontend
+---
+apiVersion: accurate.cybozu.com/v2
+kind: SubNamespace
+metadata:
+  namespace: frontend-root
+  name: frontend-sub-1
+---
+apiVersion: accurate.cybozu.com/v2
+kind: SubNamespace
+metadata:
+  namespace: frontend-root
+  name: frontend-sub-2
+---
+apiVersion: accurate.cybozu.com/v2
+kind: SubNamespace
+metadata:
+  namespace: frontend-root
+  name: frontend-sub-3
+  annotations:
+    clusterresourcequota.accurate.cybozu.com/ignore: "false"

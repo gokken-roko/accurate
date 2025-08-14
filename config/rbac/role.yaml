@@ -8,6 +8,7 @@ rules:
   - ""
   resources:
   - namespaces
+  - resourcequotas
   verbs:
   - create
   - delete
@@ -19,6 +20,7 @@ rules:
 - apiGroups:
   - accurate.cybozu.com
   resources:
+  - clusterresourcequotas
   - subnamespaces
   verbs:
   - create
@@ -31,12 +33,14 @@ rules:
 - apiGroups:
   - accurate.cybozu.com
   resources:
+  - clusterresourcequotas/finalizers
   - subnamespaces/finalizers
   verbs:
   - update
 - apiGroups:
   - accurate.cybozu.com
   resources:
+  - clusterresourcequotas/status
   - subnamespaces/status
   verbs:
   - get

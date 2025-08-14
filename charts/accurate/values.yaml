@@ -44,7 +44,8 @@ controller:
     # controller.config.labelKeys -- Labels to be propagated to sub-namespaces.
     # It is also possible to specify a glob pattern that can be interpreted by Go's "path.Match" func.
     ## https://pkg.go.dev/path#Match
-    labelKeys: []
+    labelKeys:
+    - team
     # - team
 
     # controller.config.annotationKeys -- Annotations to be propagated to sub-namespaces.
